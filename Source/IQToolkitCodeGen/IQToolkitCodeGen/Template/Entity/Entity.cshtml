@@ -1,0 +1,25 @@
+﻿@inherits IQToolkitCodeGen.Template.EntityTemplate
+@using IQToolkitCodeGen.Model;
+using System;
+using System.Collections.Generic;
+
+namespace @this.Namespace {
+    public partial class @this.Singularize(this.Table.EntityName.Replace(".","_").Replace(" ","_")) {
+		@foreach (Column column in this.Table.Columns) {
+            if(column.ShouldInclude() && !string.IsNullOrEmpty(column.PropertyType)) {
+        @:public @column.PropertyType @column.PropertyName.Replace(".", "_").Replace(" ", "_") { get; set; }
+            }
+        }
+		@{foreach (Association association in this.Table.Associations) {
+            if (association.ShouldInclude()) {
+                if (association.AssociationType == AssociationType.List) {
+        @:public List<@association.RelatedEntityName.Replace(".", "_").Replace(" ", "_")> @association.PropertyName.Replace(".", "_").Replace(" ", "_") { get; set; }
+                }
+                else {
+        @:public @association.RelatedEntityName.Replace(".", "_").Replace(" ", "_") @association.PropertyName.Replace(".", "_").Replace(" ", "_") { get; set; }				
+                }
+            }
+        }
+	}
+    }
+}

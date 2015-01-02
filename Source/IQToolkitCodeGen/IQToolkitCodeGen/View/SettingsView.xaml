@@ -1,0 +1,335 @@
+﻿<UserControl x:Class="IQToolkitCodeGen.View.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             MinWidth="300"
+             MaxWidth="300"
+             d:DesignHeight="900"
+             d:DesignWidth="300">
+    <Border BorderBrush="{StaticResource SolidBorderBrush}"
+            BorderThickness="1">
+        <Grid Background="{StaticResource PanelBodyBackgroundColorBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Connection Settings { -->
+            <Border Grid.Row="0"
+                    Style="{StaticResource SettingsPanelBodyBackground}" />
+
+            <Label Content="Connection Settings"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="3"
+                   Style="{StaticResource PanelHeaderBackground}" />
+
+            <Label Content="Provider:"
+                   Grid.Row="1"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+            <ComboBox Grid.Row="1"
+                      DisplayMemberPath="DisplayName"
+                      ItemsSource="{Binding Path=Databases}"
+                      SelectedItem="{Binding Path=SelectedDatabase, Mode=TwoWay}"
+                      Grid.Column="1"
+                      Style="{StaticResource SettingsGridControl}" />
+
+            <Label Content="Connection String:"
+                   Grid.Row="2"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+            <TextBox Text="{Binding Path=Settings.ConnectionString, UpdateSourceTrigger=PropertyChanged}"
+                     Grid.Column="1"
+                     Grid.Row="2"
+                     Style="{StaticResource SettingsGridControl}" />
+            <Grid Grid.ColumnSpan="2"
+                  Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Content="Exclude Views"
+                              IsChecked="{Binding Settings.ExcludeViews}"
+                              Style="{StaticResource SettingsGridCheckBox}" />
+                    <CheckBox Content="No Pluralization"
+                              IsChecked="{Binding Settings.NoPluralization}"
+                              Style="{StaticResource SettingsGridCheckBox}" />
+                </StackPanel>
+                <TextBlock Grid.Row="1"
+                           Visibility="{Binding CustomizeVisiblity}">
+                    <Hyperlink Style="{StaticResource SettingsGridHyperlink}"
+                               Command="{Binding CustomizeSchemaSqlCommand}">Customize schema queries...</Hyperlink>
+                </TextBlock>
+                <Button Content="Load Schema"
+                        Grid.Row="2"
+                        FontWeight="Bold"
+                        Command="{Binding LoadSchemaCommand}" />
+
+            </Grid>
+            <!-- } Connection Settings -->
+
+            <!-- Data Context Settings { -->
+            <Border Grid.Row="4"
+                    Style="{StaticResource SettingsPanelBodyBackground}" />
+
+            <Label Content="Data Context Settings"
+                   Grid.Row="4"
+                   Grid.ColumnSpan="3"
+                   Style="{StaticResource PanelHeaderBackground}" />
+
+            <Label Content="Base Class:"
+                   Grid.Row="5"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+            <TextBox Text="{Binding Path=Settings.DataContextBaseClass, UpdateSourceTrigger=PropertyChanged}"
+                     Grid.Row="5"
+                     Grid.Column="1"
+                     Style="{StaticResource SettingsGridControl}" />
+
+            <Label Content="Class Name:"
+                   Grid.Row="6"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+            <TextBox Text="{Binding Path=Settings.DataContextClassName, UpdateSourceTrigger=PropertyChanged}"
+                     Grid.Row="6"
+                     Grid.Column="1"
+                     Style="{StaticResource SettingsGridControl}" />
+
+            <Label Content="Namespace:"
+                   Grid.Row="7"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+            <TextBox Text="{Binding Path=Settings.DataContextNamespace, UpdateSourceTrigger=PropertyChanged}"
+                     Grid.Row="7"
+                     Grid.Column="1"
+                     Style="{StaticResource SettingsGridControl}" />
+
+            <Label Content="Output File:"
+                   Grid.Row="8"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+            <TextBox Text="{Binding Path=Settings.DataContextOutputFile, UpdateSourceTrigger=PropertyChanged}"
+                     Grid.Row="8"
+                     Grid.Column="1"
+                     Style="{StaticResource SettingsGridControl}" />
+
+            <Label Content="Template:"
+                   Grid.Row="9"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+            <ComboBox Grid.Row="9"
+                      Text="{Binding Path=Settings.DataContextTemplate, UpdateSourceTrigger=PropertyChanged}"
+                      ItemsSource="{Binding Path=DataContextTemplates}"
+                      Grid.Column="1"
+                      Style="{StaticResource SettingsGridControl}" />
+            <!-- } Data Context -->
+
+            <!-- Entity Settings { -->
+            <Border Grid.Row="10"
+                    Style="{StaticResource SettingsPanelBodyBackground}" />
+
+            <Label Content="Entity Settings"
+                   Grid.Row="10"
+                   Grid.ColumnSpan="3"
+                   Style="{StaticResource PanelHeaderBackground}" />
+
+            <Label Content="File Extension:"
+                   Grid.Row="11"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+            <TextBox Text="{Binding Path=Settings.EntityExtension, UpdateSourceTrigger=PropertyChanged}"
+                     Grid.Row="11"
+                     Grid.Column="1"
+                     Style="{StaticResource SettingsGridControl}" />
+
+            <Label Content="Namespace:"
+                   Grid.Row="12"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+            <TextBox Text="{Binding Path=Settings.EntityNamespace, UpdateSourceTrigger=PropertyChanged}"
+                     Grid.Row="12"
+                     Grid.Column="1"
+                     Style="{StaticResource SettingsGridControl}" />
+
+            <Label Content="Output Path:"
+                   Grid.Row="13"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+            <TextBox Text="{Binding Path=Settings.EntityOutputPath, UpdateSourceTrigger=PropertyChanged}"
+                     Grid.Row="13"
+                     Grid.Column="1"
+                     Style="{StaticResource SettingsGridControl}" />
+
+            <Label Content="Template:"
+                   Grid.Row="14"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+
+            <ComboBox Text="{Binding Path=Settings.EntityTemplate}"
+                      Grid.Row="14"
+                      Grid.Column="1"
+                      ItemsSource="{Binding Path=EntityTemplates}"
+                      Style="{StaticResource SettingsGridControl}" />
+            <!-- } Entity Settings -->
+
+            <!-- Mapping Settings { -->
+            <Border Grid.Row="15"
+                    Style="{StaticResource SettingsPanelBodyBackground}" />
+
+            <Label Content="Mapping Settings"
+                   Grid.Row="15"
+                   Grid.ColumnSpan="3"
+                   Style="{StaticResource PanelHeaderBackground}" />
+
+            <Label Content="Output File:"
+                   Grid.Row="16"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+            <TextBox Text="{Binding Path=Settings.MappingOutputFile, UpdateSourceTrigger=PropertyChanged}"
+                     Grid.Row="16"
+                     Grid.Column="1"
+                     Style="{StaticResource SettingsGridControl}" />
+
+            <Label Content="Template:"
+                   Grid.Row="17"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+            <ComboBox Text="{Binding Path=Settings.MappingTemplate}"
+                      Grid.Row="17"
+                      Grid.Column="1"
+                      ItemsSource="{Binding Path=MappingTemplates}"
+                      Style="{StaticResource SettingsGridControl}" />
+            <!-- } Mapping Settings -->
+
+            <!-- Wcf Data Service - Data Context Settings { -->
+            <Border Grid.Row="18"
+                    Style="{StaticResource SettingsPanelBodyBackground}" />
+
+            <Label Content="Wcf Data Service - Data Context Settings"
+                   Grid.Row="18"
+                   Grid.ColumnSpan="3"
+                   Style="{StaticResource PanelHeaderBackground}" />
+
+            <Label Content="Base Class:"
+                   Grid.Row="19"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+            <TextBox Text="{Binding Path=Settings.WcfDataServiceBaseClass, UpdateSourceTrigger=PropertyChanged}"
+                     Grid.Row="19"
+                     Grid.Column="1"
+                     Style="{StaticResource SettingsGridControl}" />
+
+            <Label Content="Class Name:"
+                   Grid.Row="20"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+            <TextBox Text="{Binding Path=Settings.WcfDataServiceClassName, UpdateSourceTrigger=PropertyChanged}"
+                     Grid.Row="20"
+                     Grid.Column="1"
+                     Style="{StaticResource SettingsGridControl}" />
+
+            <Label Content="Namespace:"
+                   Grid.Row="21"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+            <TextBox Text="{Binding Path=Settings.WcfDataServiceNamespace, UpdateSourceTrigger=PropertyChanged}"
+                     Grid.Row="21"
+                     Grid.Column="1"
+                     Style="{StaticResource SettingsGridControl}" />
+
+            <Label Content="Output File:"
+                   Grid.Row="22"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+            <TextBox Text="{Binding Path=Settings.WcfDataServiceOutputFile, UpdateSourceTrigger=PropertyChanged}"
+                     Grid.Row="22"
+                     Grid.Column="1"
+                     Style="{StaticResource SettingsGridControl}" />
+
+            <Label Content="Template:"
+                   Grid.Row="23"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+            <ComboBox Grid.Row="23"
+                      Text="{Binding Path=Settings.WcfDataServiceTemplate}"
+                      Grid.Column="1"
+                      ItemsSource="{Binding Path=WcfDataServiceDataContextTemplates}"
+                      Style="{StaticResource SettingsGridControl}" />
+            <!-- } Wcf Data Service - Data Context Settings -->
+
+            <!-- Wcf Data Service Client Settings { -->
+            <Border Grid.Row="24"
+                    Style="{StaticResource SettingsPanelBodyBackground}" />
+
+            <Label Content="Wcf Data Service Client Settings"
+                   Grid.Row="24"
+                   Grid.ColumnSpan="3"
+                   Style="{StaticResource PanelHeaderBackground}" />
+
+            <Label Content="Base Class:"
+                   Grid.Row="25"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+            <TextBox Text="{Binding Path=Settings.WcfDataServiceClientBaseClass, UpdateSourceTrigger=PropertyChanged}"
+                     Grid.Row="25"
+                     Grid.Column="1"
+                     Style="{StaticResource SettingsGridControl}" />
+
+            <Label Content="Class Name:"
+                   Grid.Row="26"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+            <TextBox Text="{Binding Path=Settings.WcfDataServiceClientClassName, UpdateSourceTrigger=PropertyChanged}"
+                     Grid.Row="26"
+                     Grid.Column="1"
+                     Style="{StaticResource SettingsGridControl}" />
+
+            <Label Content="Namespace:"
+                   Grid.Row="27"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+            <TextBox Text="{Binding Path=Settings.WcfDataServiceClientNamespace, UpdateSourceTrigger=PropertyChanged}"
+                     Grid.Row="27"
+                     Grid.Column="1"
+                     Style="{StaticResource SettingsGridControl}" />
+
+            <Label Content="Output File:"
+                   Grid.Row="28"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+            <TextBox Text="{Binding Path=Settings.WcfDataServiceClientOutputFile, UpdateSourceTrigger=PropertyChanged}"
+                     Grid.Row="28"
+                     Grid.Column="1"
+                     Style="{StaticResource SettingsGridControl}" />
+
+            <Label Content="Template:"
+                   Grid.Row="29"
+                   Style="{StaticResource SettingsGridTextBlock}" />
+            <ComboBox Grid.Row="29"
+                      Text="{Binding Path=Settings.WcfDataServiceClientTemplate}"
+                      Grid.Column="1"
+                      ItemsSource="{Binding Path=WcfDataServiceClientTemplates}"
+                      Style="{StaticResource SettingsGridControl}" />
+            <!-- } Wcf Data Service Client Settings  -->
+
+            <Label Content=""
+                   Grid.Row="17" />
+        </Grid>
+    </Border>
+</UserControl>

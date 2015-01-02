@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<map>
+	<Entity Id="Customer">
+		<Table Name="Customers"/>
+		<Column Member="City" />
+		<Column Member="CompanyName" />
+		<Column Member="ContactName" />
+		<Column Member="Country" />
+		<Column Member="CustomerId" IsPrimaryKey="true" />
+		<Column Member="Phone" />
+		<Association Member="Orders" KeyMembers="CustomerId" RelatedEntityID="Order" RelatedKeyMembers="CustomerId" />
+	</Entity>
+	<Entity Id="OrderDetail">
+		<Table Name="OrderDetails"/>
+		<Column Member="OrderId" IsPrimaryKey="true" IsGenerated="true" />
+		<Column Member="ProductId" IsPrimaryKey="true" IsGenerated="true" />
+		<Association Member="Product" KeyMembers="ProductId" RelatedEntityID="Product" RelatedKeyMembers="ProductId" />
+	</Entity>
+	<Entity Id="Order">
+		<Table Name="Orders"/>
+		<Column Member="CustomerId" />
+		<Column Member="OrderDate" />
+		<Column Member="OrderId" IsPrimaryKey="true" IsGenerated="true" />
+		<Association Member="Customer" KeyMembers="CustomerId" RelatedEntityID="Customer" RelatedKeyMembers="CustomerId" />
+		<Association Member="Details" KeyMembers="OrderId" RelatedEntityID="OrderDetail" RelatedKeyMembers="OrderId" />
+	</Entity>
+	<Entity Id="Product">
+		<Table Name="Products"/>
+		<Column Member="Discontinued" />
+		<Column Member="ProductId" IsPrimaryKey="true" IsGenerated="true" />
+		<Column Member="ProductName" />
+	</Entity>
+</map>

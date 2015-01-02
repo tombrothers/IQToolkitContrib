@@ -1,0 +1,126 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="DefaultTextColor"
+                     Color="White" />
+
+    <SolidColorBrush x:Key="MainContentBackgroundColor"
+                     Color="#313030" />
+    
+    <ImageBrush x:Key="PanelHeaderBackgroundImageBrush"
+                ImageSource="pack://application:,,,/IQToolkitCodeGen;component/Resources/Images/PanelHeaderBackground.png"
+                Stretch="Fill" />
+
+    <SolidColorBrush x:Key="SolidBorderBrush"
+                     Color="#888" />
+    
+    <Style x:Key="PanelHeaderBackground"
+           TargetType="{x:Type Label}">
+        <Setter Property="Background"
+                Value="{StaticResource PanelHeaderBackgroundImageBrush}" />
+
+        <Setter Property="Foreground"
+                Value="{StaticResource DefaultTextColor}" />
+
+        <Setter Property="Padding"
+                Value="5" />
+        <Setter Property="Margin"
+                Value="0,0,0,10" />
+        <Setter Property="BorderBrush"
+                Value="{StaticResource SolidBorderBrush}" />
+        <Setter Property="BorderThickness"
+                Value="1" />
+    </Style>
+
+    <Style x:Key="MainContentBorder"
+           TargetType="{x:Type Border}">
+        <Setter Property="Background"
+                Value="{StaticResource MainContentBackgroundColor}" />
+        <Setter Property="BorderBrush"
+                Value="{StaticResource SolidBorderBrush}" />
+        <Setter Property="BorderThickness"
+                Value="1" />
+    </Style>
+
+    <Style x:Key="MainContentHeader"
+           TargetType="{x:Type Border}">
+        <Setter Property="Background"
+                Value="{StaticResource PanelHeaderBackgroundImageBrush}" />
+        <Setter Property="Height"
+                Value="30" />
+    </Style>
+
+    <Style x:Key="SettingsGridTextBlock"
+           TargetType="{x:Type Label}">
+        <Setter Property="Foreground"
+                Value="{StaticResource DefaultTextColor}" />
+
+        <Setter Property="Margin"
+                Value="5,0" />
+    </Style>
+    <Style x:Key="SettingsGridHyperlink"
+           TargetType="{x:Type Hyperlink}">
+        <Setter Property="Foreground"
+                Value="{StaticResource DefaultTextColor}" />
+    </Style>
+    <Style x:Key="SettingsGridCheckBox"
+           TargetType="{x:Type CheckBox}">
+        <Setter Property="Foreground"
+                Value="{StaticResource DefaultTextColor}" />
+
+        <Setter Property="Margin"
+                Value="5,0" />
+    </Style>
+    <Style x:Key="SettingsGridControl"
+           TargetType="{x:Type Control}">
+        <Setter Property="ToolTip"
+                Value="{Binding RelativeSource={RelativeSource Self},  Path=Text}" />
+
+        <Setter Property="Margin"
+                Value="5,0,5,3" />
+    </Style>
+    
+    
+    <SolidColorBrush x:Key="PanelBodyBackgroundColorBrush" 
+                     Color="#216718" />
+
+    <ImageBrush x:Key="PanelBodyBackgroundImageBrush"
+                ImageSource="pack://application:,,,/IQToolkitCodeGen;component/Resources/Images/PanelBodyBackground.png"
+                Stretch="UniformToFill" />
+
+    <Style x:Key="SettingsPanelBodyBackground"
+           TargetType="{x:Type Border}">
+        <Setter Property="Background"
+                Value="{StaticResource PanelBodyBackgroundImageBrush}" />
+        <Setter Property="VerticalAlignment"
+                Value="Top" />
+        <Setter Property="Height"
+                Value="40" />
+        <Setter Property="Grid.RowSpan"
+                Value="2" />
+        <Setter Property="Grid.ColumnSpan"
+                Value="2" />
+        <Setter Property="VerticalAlignment"
+                Value="Top" />
+        <Setter Property="Margin"
+                Value="0,25,0,0" />
+    </Style>
+
+
+
+
+    <SolidColorBrush x:Key="WindowBackgroundBrush"
+                     Color="#052102" />
+
+
+
+
+    <Style x:Key="WindowBackground" TargetType="{x:Type Border}">
+        <Setter Property="Background"
+                Value="{StaticResource WindowBackgroundBrush}" />
+    </Style>
+
+
+
+
+</ResourceDictionary>

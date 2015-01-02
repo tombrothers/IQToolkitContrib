@@ -1,0 +1,46 @@
+﻿@inherits IQToolkitCodeGen.Template.MappingTemplate
+@using IQToolkitCodeGen.Model;
+<?xml version="1.0" encoding="utf-8" ?>
+<map>
+	@foreach (Table table in this.Tables) {
+        if(table.ShouldInclude()) {
+	<Entity Id="@this.Singularize(table.EntityName)">
+		<Table Name="@table.TableName" />
+		    @foreach (Column column in table.Columns) {
+                if (column.ShouldInclude()) {
+                    this.Write("\t\t<Column Member=\"");
+                    this.Write(column.PropertyName);
+                    this.Write("\"");
+                        
+                    if (!column.ColumnName.Equals(column.PropertyName, StringComparison.InvariantCultureIgnoreCase)) {
+                        this.Write(" Name=\"");
+                        this.Write(column.ColumnName);
+                        this.Write("\"");
+                    }
+                        
+                    if(column.PrimaryKey) {
+                        this.Write(" IsPrimaryKey=\"true\"");
+                                                                            
+                        if(column.Generated) {
+                            this.Write(" IsGenerated=\"");
+                            this.Write(column.Generated.ToString().ToLower());
+                            this.Write("\"");
+                        }
+                    }
+                    if (column.DbType.Length > 0)
+                    {
+                        this.Write(" DbType=\"");
+                        this.Write(column.DbType.ToString());
+                        this.Write("\"");
+                    }@: />
+                }
+            }
+            @foreach (Association association in table.Associations) {
+                if (association.ShouldInclude()) {
+    @:<Association Member="@association.PropertyName" KeyMembers="@association.KeyMembers" RelatedEntityID="@this.Singularize(association.RelatedEntityName)" RelatedKeyMembers="@association.RelatedKeyMembers" />
+                }
+            }
+    </Entity>		
+        }
+    }            
+</map>

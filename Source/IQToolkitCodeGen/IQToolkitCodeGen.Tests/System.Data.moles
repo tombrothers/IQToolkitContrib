@@ -1,0 +1,10 @@
+<Moles xmlns="http://schemas.microsoft.com/moles/2010/">
+  <Assembly Name="System.Data" />
+  <StubGeneration Disable="true" />
+  <MoleGeneration>
+    <Types>
+      <Clear />
+      <Add FullName="System.Data.Common.DbProviderFactories"/>
+    </Types>
+  </MoleGeneration>
+</Moles>

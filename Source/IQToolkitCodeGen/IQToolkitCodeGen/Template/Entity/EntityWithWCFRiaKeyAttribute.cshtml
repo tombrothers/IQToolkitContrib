@@ -1,0 +1,32 @@
+﻿@inherits IQToolkitCodeGen.Template.EntityTemplate
+@using IQToolkitCodeGen.Model;
+using System;
+@if(this.Table.HasPrimaryKey()) {
+@:using System.ComponentModel.DataAnnotations;
+@:using IQToolkitContrib;
+}
+
+namespace @this.Namespace {
+    [Serializable]
+    public partial class @this.Singularize(this.Table.EntityName) {
+		@foreach (Column column in this.Table.Columns) {
+            if(column.ShouldInclude() && !string.IsNullOrEmpty(column.PropertyType)) {
+                if(column.PrimaryKey) {
+        @:[Key]
+                }
+        @:public @column.PropertyType @column.PropertyName { get; set; }
+            }
+        }
+		@{foreach (Association association in this.Table.Associations) {
+            if (association.ShouldInclude()) {
+                if (association.AssociationType == AssociationType.List) {
+        @:public List<@association.RelatedEntityName> @association.PropertyName { get; set; }
+                }
+                else {
+        @:public @association.RelatedEntityName @association.PropertyName { get; set; }				
+                }
+            }
+        }
+	}
+    }
+}

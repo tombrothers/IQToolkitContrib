@@ -1,0 +1,32 @@
+﻿@inherits IQToolkitCodeGen.Template.DataContextTemplate
+@using IQToolkitCodeGen.Model;
+using System;
+using IQToolkit;
+using IQToolkit.Data.Common;
+using LinqToVfp;
+
+namespace @this.Namespace {
+	public partial class @this.ClassName {
+		public VfpQueryProvider Provider { get; private set; }
+
+        public @this.ClassName (string connectionString)
+            : this(connectionString, typeof(@{this.Write(this.ClassName);}Attributes).FullName) {
+        }
+
+        public @this.ClassName (string connectionString, string mappingId)
+            : this(VfpQueryProvider.Create(connectionString, mappingId)) {
+        }
+
+        public @this.ClassName (VfpQueryProvider provider) {
+            this.Provider = provider;
+        }
+		@foreach (Table table in this.Tables) {
+            if(table.ShouldInclude()) {
+        @:
+        @:public virtual IEntityTable<@this.Singularize(table.EntityName)> @this.Pluralize(table.EntityName) {
+            @:get { return this.Provider.GetTable<@this.Singularize(table.EntityName)>("@this.Pluralize(table.EntityName)"); }
+        @:}
+            }
+        }
+	}
+}

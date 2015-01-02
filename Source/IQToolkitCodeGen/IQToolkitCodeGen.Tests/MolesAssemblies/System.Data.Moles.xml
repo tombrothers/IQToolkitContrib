@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>System.Data.Moles</name>
+    </assembly>
+    <members>
+        <member name="T:System.Data.Common.Moles.MDbProviderFactories">
+            <summary>Mole type of <see cref="T:System.Data.Common.DbProviderFactories"/>
+            .</summary>
+        </member>
+        <member name="M:System.Data.Common.Moles.MDbProviderFactories.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Data.Common.Moles.MDbProviderFactories.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:System.Data.Common.Moles.MDbProviderFactories.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:System.Data.Common.Moles.MDbProviderFactories.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:System.Data.Common.Moles.MDbProviderFactories.GetFactoryClasses">
+            <summary>Sets the mole of <see cref="M:System.Data.Common.DbProviderFactories.GetFactoryClasses"/>
+            </summary>
+        </member>
+        <member name="P:System.Data.Common.Moles.MDbProviderFactories.GetFactoryDataRow">
+            <summary>Sets the mole of <see cref="M:System.Data.Common.DbProviderFactories.GetFactory(System.Data.DataRow)"/>
+            </summary>
+        </member>
+        <member name="P:System.Data.Common.Moles.MDbProviderFactories.GetFactoryString">
+            <summary>Sets the mole of <see cref="M:System.Data.Common.DbProviderFactories.GetFactory(System.String)"/>
+            </summary>
+        </member>
+        <member name="P:System.Data.Common.Moles.MDbProviderFactories.GetProviderTable">
+            <summary>Sets the mole of <see cref="M:System.Data.Common.DbProviderFactories.GetProviderTable"/>
+            </summary>
+        </member>
+        <member name="P:System.Data.Common.Moles.MDbProviderFactories.IncludeFrameworkFactoryClassesDataTable">
+            <summary>Sets the mole of <see cref="M:System.Data.Common.DbProviderFactories.IncludeFrameworkFactoryClasses(System.Data.DataTable)"/>
+            </summary>
+        </member>
+        <member name="P:System.Data.Common.Moles.MDbProviderFactories.Initialize">
+            <summary>Sets the mole of <see cref="M:System.Data.Common.DbProviderFactories.Initialize"/>
+            </summary>
+        </member>
+        <member name="T:System.Data.Common.Moles.MDbProviderFactoriesConfigurationHandler">
+            <summary>Mole type of <see cref="T:System.Data.Common.DbProviderFactoriesConfigurationHandler"/>
+            .</summary>
+        </member>
+        <member name="M:System.Data.Common.Moles.MDbProviderFactoriesConfigurationHandler.#ctor">
+            <summary>Initializes a new mole</summary>
+        </member>
+        <member name="M:System.Data.Common.Moles.MDbProviderFactoriesConfigurationHandler.#ctor(System.Data.Common.DbProviderFactoriesConfigurationHandler)">
+            <summary>Initializes a new mole for the given instance</summary>
+        </member>
+        <member name="M:System.Data.Common.Moles.MDbProviderFactoriesConfigurationHandler.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:System.Data.Common.Moles.MDbProviderFactoriesConfigurationHandler.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the moled type</summary>
+        </member>
+        <member name="M:System.Data.Common.Moles.MDbProviderFactoriesConfigurationHandler.Bind(System.Configuration.IConfigurationSectionHandler)">
+            <summary>Binds the members of the interface to the mole.</summary>
+        </member>
+        <member name="P:System.Data.Common.Moles.MDbProviderFactoriesConfigurationHandler.Behavior">
+            <summary>Assigns the behavior for all methods of the moled type</summary>
+        </member>
+        <member name="P:System.Data.Common.Moles.MDbProviderFactoriesConfigurationHandler.Constructor">
+            <summary>Sets the mole of <see cref="M:System.Data.Common.DbProviderFactoriesConfigurationHandler.#ctor"/>
+            </summary>
+        </member>
+        <member name="P:System.Data.Common.Moles.MDbProviderFactoriesConfigurationHandler.CreateObjectObjectXmlNode">
+            <summary>Sets the mole of <see cref="M:System.Data.Common.DbProviderFactoriesConfigurationHandler.Create(System.Object,System.Object,System.Xml.XmlNode)"/>
+            </summary>
+        </member>
+        <member name="P:System.Data.Common.Moles.MDbProviderFactoriesConfigurationHandler.CreateProviderDataTable">
+            <summary>Sets the mole of <see cref="M:System.Data.Common.DbProviderFactoriesConfigurationHandler.CreateProviderDataTable"/>
+            </summary>
+        </member>
+        <member name="P:System.Data.Common.Moles.MDbProviderFactoriesConfigurationHandler.CreateStaticObjectObjectXmlNode">
+            <summary>Sets the mole of <see cref="M:System.Data.Common.DbProviderFactoriesConfigurationHandler.CreateStatic(System.Object,System.Object,System.Xml.XmlNode)"/>
+            </summary>
+        </member>
+        <member name="P:System.Data.Common.Moles.MDbProviderFactoriesConfigurationHandler.HandleProvidersDataSetObjectXmlNodeString">
+            <summary>Sets the mole of <see cref="M:System.Data.Common.DbProviderFactoriesConfigurationHandler.HandleProviders(System.Data.DataSet,System.Object,System.Xml.XmlNode,System.String)"/>
+            </summary>
+        </member>
+        <member name="T:System.Data.Common.Moles.MDbProviderFactoriesConfigurationHandler.AllInstances">
+            <summary>Define moles for all instances members</summary>
+        </member>
+        <member name="P:System.Data.Common.Moles.MDbProviderFactoriesConfigurationHandler.AllInstances.CreateObjectObjectXmlNode">
+            <summary>Sets the mole of <see cref="M:System.Data.Common.DbProviderFactoriesConfigurationHandler.Create(System.Object,System.Object,System.Xml.XmlNode)"/>
+            </summary>
+        </member>
+    </members>
+</doc>

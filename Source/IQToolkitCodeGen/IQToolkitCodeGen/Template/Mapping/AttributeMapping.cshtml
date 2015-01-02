@@ -1,0 +1,50 @@
+﻿@inherits IQToolkitCodeGen.Template.MappingTemplate
+@using IQToolkitCodeGen.Model;
+using System;
+using IQToolkit;
+using IQToolkit.Data.Common;
+using IQToolkit.Data.Mapping;
+
+namespace @this.Namespace {
+	public partial class @{this.Write(this.ClassName);}Attributes : @{this.Write(this.ClassName);} {
+        public @{this.Write(this.ClassName);}Attributes(string connectionString)
+            : base(connectionString) {
+        }
+		@foreach (Table table in this.Tables) {
+            if(table.ShouldInclude()) {
+        @:      
+        @:[Table(Name="@table.TableName")]
+		        foreach (Column column in table.Columns) {
+                    if (column.ShouldInclude()) {
+                        this.Write("\t\t[Column(Member=\"");
+                        this.Write(column.PropertyName);
+                        this.Write("\"");
+                        
+                        if (!column.ColumnName.Equals(column.PropertyName, StringComparison.InvariantCultureIgnoreCase)) {
+                            this.Write(", Name=\"");
+                            this.Write(column.ColumnName);
+                            this.Write("\"");
+                        }
+                        
+                        if(column.PrimaryKey) {
+                            this.Write(", IsPrimaryKey=true");
+                                                                            
+                            if(column.Generated) {
+                                this.Write(", IsGenerated=");
+                                this.Write(column.Generated.ToString().ToLower());
+                            }
+                        }@:)]
+                    }
+                }
+                foreach (Association association in table.Associations) {
+                    if (association.ShouldInclude()) {
+        @:[Association(Member="@association.PropertyName", KeyMembers="@association.KeyMembers", RelatedEntityID="@this.Pluralize(association.RelatedEntityName)", RelatedKeyMembers="@association.RelatedKeyMembers")]
+                    }
+                }
+        @:public override IEntityTable<@this.Singularize(table.EntityName)> @this.Pluralize(table.EntityName) {
+            @:get { return base.@this.Pluralize(table.EntityName); }
+        @:}
+            }
+        }
+    }            
+  }

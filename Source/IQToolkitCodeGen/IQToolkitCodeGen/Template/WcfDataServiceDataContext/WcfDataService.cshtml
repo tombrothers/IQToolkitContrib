@@ -1,0 +1,27 @@
+﻿@inherits IQToolkitCodeGen.Template.WcfDataServiceTemplate
+@using IQToolkitCodeGen.Model;
+using System;
+using IQToolkit;
+using IQToolkit.Data;
+using @this.EntityNamespace;
+
+namespace @this.Namespace {
+    public partial class @this.ClassName : @this.BaseClass {
+        public @this.DataContextClass Context { get; private set; }
+		@foreach (Table table in this.Tables) {
+            if(table.ShouldInclude() && table.HasPrimaryKey()) {
+        @:
+        @:public IQueryable<@this.Singularize(table.EntityName)> @this.Pluralize(table.EntityName) {
+            @:get {
+                @:return this.context.List<@this.Singularize(table.EntityName)>();
+            @:}
+        @:}
+            }
+        }
+
+        public @this.ClassName (@this.DataContextClass context)
+            : base(context.Provider) {
+			this.context = context;
+        }
+    }
+}

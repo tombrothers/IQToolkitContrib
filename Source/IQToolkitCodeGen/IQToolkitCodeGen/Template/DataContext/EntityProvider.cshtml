@@ -1,0 +1,22 @@
+﻿@inherits IQToolkitCodeGen.Template.DataContextTemplate
+@using IQToolkitCodeGen.Model;
+using System;
+using IQToolkit;
+
+namespace @this.Namespace {
+	public partial class @this.ClassName {
+		public IEntityProvider Provider { get; private set; }
+
+        public @this.ClassName (IEntityProvider provider) {
+            this.Provider = provider;
+        }
+		@foreach (Table table in this.Tables) {
+            if(table.ShouldInclude()) {
+
+        @:public virtual IEntityTable<@this.Singularize(table.EntityName)> @this.Pluralize(table.EntityName) {
+            @:get { return this.Provider.GetTable<@this.Singularize(table.EntityName)>("@this.Pluralize(table.EntityName)"); }
+        @:}
+            }
+        }
+	}
+}

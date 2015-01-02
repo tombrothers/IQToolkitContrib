@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{865B061F-CAB1-40C2-89BE-FE002F94C32C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IQToolkitCodeGenSchema</RootNamespace>
+    <AssemblyName>IQToolkitCodeGenSchema</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugWithDisplay|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DebugWithDisplay\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;DEBUGGER_DISPLAY</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\IQToolkitCodeGenSchema.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArgumentUtility.cs" />
+    <Compile Include="IConnectionStringValidator.cs" />
+    <Compile Include="Models\AssociationType.cs" />
+    <Compile Include="Models\Column.cs" />
+    <Compile Include="ConnectionStringValidator.cs" />
+    <Compile Include="ConnectionStringValidator.FileValidator.cs">
+      <DependentUpon>ConnectionStringValidator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionStringValidator.Validator.cs">
+      <DependentUpon>ConnectionStringValidator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionStringValidator.VfpValidator.cs">
+      <DependentUpon>ConnectionStringValidator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContainerConfigurator.cs" />
+    <Compile Include="Models\Association.cs" />
+    <Compile Include="Models\Database.cs" />
+    <Compile Include="Providers\AssociationSchemaProviders\CustomSqlProvider.cs" />
+    <Compile Include="Providers\ColumnSchemaProviders\CustomSqlProvider.cs" />
+    <Compile Include="Providers\DatabaseProvider.cs" />
+    <Compile Include="Models\DatabaseType.cs" />
+    <Compile Include="Factories\ColumnSchemaServiceFactory.cs" />
+    <Compile Include="Factories\DataTableFactory.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Factories\DbConnectionFactory.cs" />
+    <Compile Include="Factories\IColumnSchemaServiceFactory.cs" />
+    <Compile Include="Factories\IDataTableFactory.cs" />
+    <Compile Include="Factories\IDbConnectionFactory.cs" />
+    <Compile Include="Factories\IPrimaryKeySchemaServiceFactory.cs" />
+    <Compile Include="Factories\PrimaryKeySchemaServiceFactory.cs" />
+    <Compile Include="Models\IAssociation.cs" />
+    <Compile Include="Models\IColumn.cs" />
+    <Compile Include="Models\IDatabase.cs" />
+    <Compile Include="Providers\DbTypeProviders\OracleProvider.cs" />
+    <Compile Include="Providers\IDatabaseProvider.cs" />
+    <Compile Include="Providers\IOracleUserProvider.cs" />
+    <Compile Include="Providers\OracleUserProvider.cs" />
+    <Compile Include="Providers\TableSchemaProviders\CustomSqlProvider.cs" />
+    <Compile Include="Providers\TableSchemaProviders\OracleProvider.cs" />
+    <Compile Include="Schema.cs" />
+    <Compile Include="Services\IPluralizationService.cs" />
+    <Compile Include="Models\IPropertyName.cs" />
+    <Compile Include="Models\ISchemaOptions.cs" />
+    <Compile Include="Providers\ISchemaProvider.cs" />
+    <Compile Include="Models\ITable.cs" />
+    <Compile Include="Models\IAssociationSchema.cs" />
+    <Compile Include="Models\IColumnSchema.cs" />
+    <Compile Include="Models\IColumnTypeSchema.cs" />
+    <Compile Include="Models\IPrimaryKeySchema.cs" />
+    <Compile Include="Models\ITableSchema.cs" />
+    <Compile Include="Services\IPropertyNameDeDuplicateService.cs" />
+    <Compile Include="Services\PluralizationService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ColumnSchemaProviders\IProvider.cs" />
+    <Compile Include="Providers\ColumnTypeSchemaProviders\IProvider.cs" />
+    <Compile Include="Providers\DbTypeProviders\IProvider.cs" />
+    <Compile Include="Providers\TableSchemaProviders\IProvider.cs" />
+    <Compile Include="Providers\SchemaProvider.cs" />
+    <Compile Include="Models\AssociationSchema.cs" />
+    <Compile Include="Providers\AssociationSchemaProviders\MySqlProvider.cs">
+    </Compile>
+    <Compile Include="Providers\AssociationSchemaProviders\OleDbProvider.cs">
+    </Compile>
+    <Compile Include="Providers\AssociationSchemaProviders\OracleProvider.cs">
+    </Compile>
+    <Compile Include="Providers\AssociationSchemaProviders\Provider.cs">
+    </Compile>
+    <Compile Include="Providers\AssociationSchemaProviders\EmptyProvider.cs">
+    </Compile>
+    <Compile Include="Providers\AssociationSchemaProviders\SqlServerProvider.cs">
+    </Compile>
+    <Compile Include="Services\AssociationSchemaService.cs" />
+    <Compile Include="Providers\ColumnSchemaProviders\OracleProvider.cs">
+    </Compile>
+    <Compile Include="Providers\ColumnSchemaProviders\VfpProvider.cs">
+    </Compile>
+    <Compile Include="Providers\ColumnSchemaProviders\InformationSchemaProvider.cs">
+    </Compile>
+    <Compile Include="Models\ColumnSchema.cs" />
+    <Compile Include="Providers\ColumnSchemaProviders\OleDbProvider.cs">
+    </Compile>
+    <Compile Include="Providers\ColumnSchemaProviders\Provider.cs">
+    </Compile>
+    <Compile Include="Models\ColumnTypeSchema.cs" />
+    <Compile Include="Providers\ColumnTypeSchemaProviders\Provider.cs">
+    </Compile>
+    <Compile Include="Providers\ColumnTypeSchemaProviders\SqlCe35Provider.cs">
+    </Compile>
+    <Compile Include="Providers\ColumnTypeSchemaProviders\AccessProvider.cs">
+    </Compile>
+    <Compile Include="Providers\ColumnTypeSchemaProviders\VfpProvider.cs">
+    </Compile>
+    <Compile Include="Providers\DbTypeProviders\VfpProvider.cs" />
+    <Compile Include="Providers\DbTypeProviders\Provider.cs" />
+    <Compile Include="Providers\AssociationSchemaProviders\IProvider.cs" />
+    <Compile Include="Services\ColumnSchemaService.cs" />
+    <Compile Include="Services\ColumnTypeSchemaService.cs" />
+    <Compile Include="Services\DbTypeService.cs" />
+    <Compile Include="Services\IAssociationSchemaService.cs" />
+    <Compile Include="Providers\PrimaryKeySchemaProviders\IProvider.cs">
+    </Compile>
+    <Compile Include="Providers\PrimaryKeySchemaProviders\VfpProvider.cs">
+    </Compile>
+    <Compile Include="Models\PrimaryKeySchema.cs" />
+    <Compile Include="Providers\PrimaryKeySchemaProviders\Provider.cs">
+    </Compile>
+    <Compile Include="Providers\TableSchemaProviders\AccessProvider.cs">
+    </Compile>
+    <Compile Include="Providers\TableSchemaProviders\SQLiteProvider.cs">
+    </Compile>
+    <Compile Include="Providers\TableSchemaProviders\InformationSchemaProvider.cs">
+    </Compile>
+    <Compile Include="Models\TableSchema.cs" />
+    <Compile Include="Providers\TableSchemaProviders\Provider.cs">
+    </Compile>
+    <Compile Include="Services\IColumnSchemaService.cs" />
+    <Compile Include="Services\IColumnTypeSchemaService.cs" />
+    <Compile Include="Services\IDbTypeService.cs" />
+    <Compile Include="Services\IPrimaryKeySchemaService.cs" />
+    <Compile Include="Services\ITableSchemaService.cs" />
+    <Compile Include="Services\PrimaryKeySchemaService.cs" />
+    <Compile Include="Services\PropertyNameDeDuplicateService.cs" />
+    <Compile Include="Services\TableSchemaService.cs" />
+    <Compile Include="Models\Table.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,133 @@
+<Schema>
+  <Table TableName="Categories" IsView="false" EntityName="Category">
+    <Column ColumnName="categoryid" PropertyName="Categoryid" PropertyType="System.Int32" PrimaryKey="true" Generated="true" DbType="I AUTOINC NOT NULL" Nullable="false" Precision="4" DefaultValue="" />
+    <Column ColumnName="categoryname" PropertyName="Categoryname" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="description" PropertyName="Description" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="M" Nullable="true" />
+    <Column ColumnName="picture" PropertyName="Picture" PropertyType="System.Byte[]" PrimaryKey="false" Generated="false" DbType="W" Nullable="true" />
+    <Association AssociationName="FK_Categories_ProductsList" PropertyName="Products" TableName="Categories" ColumnName="categoryid" RelatedTableName="Products" RelatedColumnName="categoryid" />
+  </Table>
+  <Table TableName="CustomerCustomerDemo" IsView="false" EntityName="CustomerCustomerDemo">
+    <Column ColumnName="customerid" PropertyName="Customerid" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(5)" Nullable="true" MaxLength="5" />
+    <Column ColumnName="customertypeid" PropertyName="Customertypeid" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(10)" Nullable="true" MaxLength="10" />
+  </Table>
+  <Table TableName="CustomerDemographics" IsView="false" EntityName="CustomerDemographic">
+    <Column ColumnName="customertypeid" PropertyName="Customertypeid" PropertyType="System.String" PrimaryKey="true" Generated="false" DbType="C(10)" Nullable="true" MaxLength="10" />
+    <Column ColumnName="customerdesc" PropertyName="Customerdesc" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="M" Nullable="true" />
+  </Table>
+  <Table TableName="Customers" IsView="false" EntityName="Customer">
+    <Column ColumnName="customerid" PropertyName="Customerid" PropertyType="System.String" PrimaryKey="true" Generated="false" DbType="C(5)" Nullable="true" MaxLength="5" />
+    <Column ColumnName="companyname" PropertyName="Companyname" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(40)" Nullable="true" MaxLength="40" />
+    <Column ColumnName="contactname" PropertyName="Contactname" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(30)" Nullable="true" MaxLength="30" />
+    <Column ColumnName="contacttitle" PropertyName="Contacttitle" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(30)" Nullable="true" MaxLength="30" />
+    <Column ColumnName="address" PropertyName="Address" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(60)" Nullable="true" MaxLength="60" />
+    <Column ColumnName="city" PropertyName="City" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="region" PropertyName="Region" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="postalcode" PropertyName="Postalcode" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(10)" Nullable="true" MaxLength="10" />
+    <Column ColumnName="country" PropertyName="Country" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="phone" PropertyName="Phone" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(24)" Nullable="true" MaxLength="24" />
+    <Column ColumnName="fax" PropertyName="Fax" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(24)" Nullable="true" MaxLength="24" />
+  </Table>
+  <Table TableName="Employees" IsView="false" EntityName="Employee">
+    <Column ColumnName="employeeid" PropertyName="Employeeid" PropertyType="System.Int32" PrimaryKey="true" Generated="true" DbType="I AUTOINC NOT NULL" Nullable="false" Precision="4" DefaultValue="" />
+    <Column ColumnName="lastname" PropertyName="Lastname" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(20)" Nullable="true" MaxLength="20" />
+    <Column ColumnName="firstname" PropertyName="Firstname" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(10)" Nullable="true" MaxLength="10" />
+    <Column ColumnName="title" PropertyName="Title" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(30)" Nullable="true" MaxLength="30" />
+    <Column ColumnName="titleofcourtesy" PropertyName="Titleofcourtesy" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(25)" Nullable="true" MaxLength="25" />
+    <Column ColumnName="birthdate" PropertyName="Birthdate" PropertyType="System.DateTime" PrimaryKey="false" Generated="false" DbType="D" Nullable="true" />
+    <Column ColumnName="hiredate" PropertyName="Hiredate" PropertyType="System.DateTime" PrimaryKey="false" Generated="false" DbType="D" Nullable="true" />
+    <Column ColumnName="address" PropertyName="Address" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(60)" Nullable="true" MaxLength="60" />
+    <Column ColumnName="city" PropertyName="City" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="region" PropertyName="Region" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="postalcode" PropertyName="Postalcode" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(10)" Nullable="true" MaxLength="10" />
+    <Column ColumnName="country" PropertyName="Country" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="homephone" PropertyName="Homephone" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(24)" Nullable="true" MaxLength="24" />
+    <Column ColumnName="extension" PropertyName="Extension" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(4)" Nullable="true" MaxLength="4" />
+    <Column ColumnName="photo" PropertyName="Photo" PropertyType="System.Byte[]" PrimaryKey="false" Generated="false" DbType="W" Nullable="true" />
+    <Column ColumnName="notes" PropertyName="Notes" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="M" Nullable="true" />
+    <Column ColumnName="reportsto" PropertyName="Reportsto" PropertyType="System.Int32" PrimaryKey="false" Generated="false" DbType="I" Nullable="true" Precision="4" />
+    <Association AssociationName="FK_Employees_Employees" PropertyName="Employees" TableName="Employees" ColumnName="reportsto" RelatedTableName="Employees" RelatedColumnName="employeeid" />
+    <Association AssociationName="FK_Employees_EmployeesList" PropertyName="Employees1" TableName="Employees" ColumnName="employeeid" RelatedTableName="Employees" RelatedColumnName="reportsto" />
+    <Association AssociationName="FK_Employees_EmployeeTerritoriesList" PropertyName="EmployeeTerritories" TableName="Employees" ColumnName="employeeid" RelatedTableName="EmployeeTerritories" RelatedColumnName="employeeid" />
+    <Association AssociationName="FK_Employees_OrdersList" PropertyName="Orders" TableName="Employees" ColumnName="employeeid" RelatedTableName="Orders" RelatedColumnName="employeeid" />
+  </Table>
+  <Table TableName="EmployeeTerritories" IsView="false" EntityName="EmployeeTerritory">
+    <Column ColumnName="employeeid" PropertyName="Employeeid" PropertyType="System.Int32" PrimaryKey="false" Generated="false" DbType="I NOT NULL" Nullable="false" Precision="4" />
+    <Column ColumnName="territoryid" PropertyName="Territoryid" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(20)" Nullable="true" MaxLength="20" />
+    <Association AssociationName="FK_EmployeeTerritories_Employees" PropertyName="Employees" TableName="EmployeeTerritories" ColumnName="employeeid" RelatedTableName="Employees" RelatedColumnName="employeeid" />
+  </Table>
+  <Table TableName="OrderDetails" IsView="false" EntityName="OrderDetail">
+    <Column ColumnName="orderid" PropertyName="Orderid" PropertyType="System.Int32" PrimaryKey="true" Generated="false" DbType="I NOT NULL" Nullable="false" Precision="4" />
+    <Column ColumnName="productid" PropertyName="Productid" PropertyType="System.Int32" PrimaryKey="true" Generated="false" DbType="I NOT NULL" Nullable="false" Precision="4" />
+    <Column ColumnName="unitprice" PropertyName="Unitprice" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="Y NOT NULL" Nullable="false" Precision="8" DefaultValue="0" />
+    <Column ColumnName="quantity" PropertyName="Quantity" PropertyType="System.Int32" PrimaryKey="false" Generated="false" DbType="I NOT NULL" Nullable="false" Precision="4" DefaultValue="1" />
+    <Column ColumnName="discount" PropertyName="Discount" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="F(19,5) NOT NULL" Nullable="false" Precision="19" Scale="5" DefaultValue="0" />
+    <Association AssociationName="FK_OrderDetails_Products" PropertyName="Products" TableName="OrderDetails" ColumnName="productid" RelatedTableName="Products" RelatedColumnName="productid" />
+    <Association AssociationName="FK_OrderDetails_Orders" PropertyName="Orders" TableName="OrderDetails" ColumnName="orderid" RelatedTableName="Orders" RelatedColumnName="orderid" />
+  </Table>
+  <Table TableName="Orders" IsView="false" EntityName="Order">
+    <Column ColumnName="orderid" PropertyName="Orderid" PropertyType="System.Int32" PrimaryKey="true" Generated="true" DbType="I AUTOINC NOT NULL" Nullable="false" Precision="4" DefaultValue="" />
+    <Column ColumnName="customerid" PropertyName="Customerid" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(5)" Nullable="true" MaxLength="5" />
+    <Column ColumnName="employeeid" PropertyName="Employeeid" PropertyType="System.Int32" PrimaryKey="false" Generated="false" DbType="I" Nullable="true" Precision="4" />
+    <Column ColumnName="orderdate" PropertyName="Orderdate" PropertyType="System.DateTime" PrimaryKey="false" Generated="false" DbType="D" Nullable="true" />
+    <Column ColumnName="requireddate" PropertyName="Requireddate" PropertyType="System.DateTime" PrimaryKey="false" Generated="false" DbType="D" Nullable="true" />
+    <Column ColumnName="shippeddate" PropertyName="Shippeddate" PropertyType="System.DateTime" PrimaryKey="false" Generated="false" DbType="D" Nullable="true" />
+    <Column ColumnName="shipvia" PropertyName="Shipvia" PropertyType="System.Int32" PrimaryKey="false" Generated="false" DbType="I" Nullable="true" Precision="4" />
+    <Column ColumnName="freight" PropertyName="Freight" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="Y" Nullable="true" Precision="8" DefaultValue="0" />
+    <Column ColumnName="shipname" PropertyName="Shipname" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(40)" Nullable="true" MaxLength="40" />
+    <Column ColumnName="shipaddress" PropertyName="Shipaddress" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(60)" Nullable="true" MaxLength="60" />
+    <Column ColumnName="shipcity" PropertyName="Shipcity" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="shipregion" PropertyName="Shipregion" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="shippostalcode" PropertyName="Shippostalcode" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(10)" Nullable="true" MaxLength="10" />
+    <Column ColumnName="shipcountry" PropertyName="Shipcountry" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(15)" Nullable="true" MaxLength="15" />
+    <Association AssociationName="FK_Orders_Employees" PropertyName="Employees" TableName="Orders" ColumnName="employeeid" RelatedTableName="Employees" RelatedColumnName="employeeid" />
+    <Association AssociationName="FK_Orders_Shippers" PropertyName="Shippers" TableName="Orders" ColumnName="shipvia" RelatedTableName="Shippers" RelatedColumnName="shipperid" />
+    <Association AssociationName="FK_Orders_OrderDetailsList" PropertyName="OrderDetails" TableName="Orders" ColumnName="orderid" RelatedTableName="OrderDetails" RelatedColumnName="orderid" />
+  </Table>
+  <Table TableName="Products" IsView="false" EntityName="Product">
+    <Column ColumnName="productid" PropertyName="Productid" PropertyType="System.Int32" PrimaryKey="true" Generated="true" DbType="I AUTOINC NOT NULL" Nullable="false" Precision="4" DefaultValue="" />
+    <Column ColumnName="productname" PropertyName="Productname" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(40)" Nullable="true" MaxLength="40" />
+    <Column ColumnName="supplierid" PropertyName="Supplierid" PropertyType="System.Int32" PrimaryKey="false" Generated="false" DbType="I" Nullable="true" Precision="4" />
+    <Column ColumnName="categoryid" PropertyName="Categoryid" PropertyType="System.Int32" PrimaryKey="false" Generated="false" DbType="I" Nullable="true" Precision="4" />
+    <Column ColumnName="quantityperunit" PropertyName="Quantityperunit" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(20)" Nullable="true" MaxLength="20" />
+    <Column ColumnName="unitprice" PropertyName="Unitprice" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="Y" Nullable="true" Precision="8" />
+    <Column ColumnName="unitsinstock" PropertyName="Unitsinstock" PropertyType="System.Int32" PrimaryKey="false" Generated="false" DbType="I" Nullable="true" Precision="4" DefaultValue="0" />
+    <Column ColumnName="unitsonorder" PropertyName="Unitsonorder" PropertyType="System.Int32" PrimaryKey="false" Generated="false" DbType="I" Nullable="true" Precision="4" />
+    <Column ColumnName="reorderlevel" PropertyName="Reorderlevel" PropertyType="System.Int32" PrimaryKey="false" Generated="false" DbType="I" Nullable="true" Precision="4" DefaultValue="0" />
+    <Column ColumnName="discontinued" PropertyName="Discontinued" PropertyType="System.Boolean" PrimaryKey="false" Generated="false" DbType="L NOT NULL" Nullable="false" DefaultValue=".F." />
+    <Association AssociationName="FK_Products_Suppliers" PropertyName="Suppliers" TableName="Products" ColumnName="supplierid" RelatedTableName="Suppliers" RelatedColumnName="supplierid" />
+    <Association AssociationName="FK_Products_Categories" PropertyName="Categories" TableName="Products" ColumnName="categoryid" RelatedTableName="Categories" RelatedColumnName="categoryid" />
+    <Association AssociationName="FK_Products_OrderDetailsList" PropertyName="OrderDetails" TableName="Products" ColumnName="productid" RelatedTableName="OrderDetails" RelatedColumnName="productid" />
+  </Table>
+  <Table TableName="Region" IsView="false" EntityName="Region">
+    <Column ColumnName="regionid" PropertyName="Regionid" PropertyType="System.Int32" PrimaryKey="true" Generated="true" DbType="I AUTOINC NOT NULL" Nullable="false" Precision="4" DefaultValue="" />
+    <Column ColumnName="regiondescription" PropertyName="Regiondescription" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(50)" Nullable="true" MaxLength="50" />
+    <Association AssociationName="FK_Region_TerritoriesList" PropertyName="Territories" TableName="Region" ColumnName="regionid" RelatedTableName="Territories" RelatedColumnName="regionid" />
+  </Table>
+  <Table TableName="Shippers" IsView="false" EntityName="Shipper">
+    <Column ColumnName="shipperid" PropertyName="Shipperid" PropertyType="System.Int32" PrimaryKey="true" Generated="true" DbType="I AUTOINC NOT NULL" Nullable="false" Precision="4" DefaultValue="" />
+    <Column ColumnName="companyname" PropertyName="Companyname" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(40)" Nullable="true" MaxLength="40" />
+    <Column ColumnName="phone" PropertyName="Phone" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(24)" Nullable="true" MaxLength="24" />
+    <Association AssociationName="FK_Shippers_OrdersList" PropertyName="Orders" TableName="Shippers" ColumnName="shipperid" RelatedTableName="Orders" RelatedColumnName="shipvia" />
+  </Table>
+  <Table TableName="Suppliers" IsView="false" EntityName="Supplier">
+    <Column ColumnName="supplierid" PropertyName="Supplierid" PropertyType="System.Int32" PrimaryKey="true" Generated="true" DbType="I AUTOINC NOT NULL" Nullable="false" Precision="4" DefaultValue="" />
+    <Column ColumnName="companyname" PropertyName="Companyname" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(40)" Nullable="true" MaxLength="40" />
+    <Column ColumnName="contactname" PropertyName="Contactname" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(30)" Nullable="true" MaxLength="30" />
+    <Column ColumnName="contacttitle" PropertyName="Contacttitle" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(30)" Nullable="true" MaxLength="30" />
+    <Column ColumnName="address" PropertyName="Address" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(60)" Nullable="true" MaxLength="60" />
+    <Column ColumnName="city" PropertyName="City" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="region" PropertyName="Region" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="postalcode" PropertyName="Postalcode" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(10)" Nullable="true" MaxLength="10" />
+    <Column ColumnName="country" PropertyName="Country" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="phone" PropertyName="Phone" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(24)" Nullable="true" MaxLength="24" />
+    <Column ColumnName="fax" PropertyName="Fax" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(24)" Nullable="true" MaxLength="24" />
+    <Column ColumnName="homepage" PropertyName="Homepage" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="M" Nullable="true" />
+    <Association AssociationName="FK_Suppliers_ProductsList" PropertyName="Products" TableName="Suppliers" ColumnName="supplierid" RelatedTableName="Products" RelatedColumnName="supplierid" />
+  </Table>
+  <Table TableName="Territories" IsView="false" EntityName="Territory">
+    <Column ColumnName="territoryid" PropertyName="Territoryid" PropertyType="System.String" PrimaryKey="true" Generated="false" DbType="C(20)" Nullable="true" MaxLength="20" />
+    <Column ColumnName="territorydescription" PropertyName="Territorydescription" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="C(50)" Nullable="true" MaxLength="50" />
+    <Column ColumnName="regionid" PropertyName="Regionid" PropertyType="System.Int32" PrimaryKey="false" Generated="false" DbType="I NOT NULL" Nullable="false" Precision="4" />
+    <Association AssociationName="FK_Territories_Region" PropertyName="Region" TableName="Territories" ColumnName="regionid" RelatedTableName="Region" RelatedColumnName="regionid" />
+  </Table>
+</Schema>

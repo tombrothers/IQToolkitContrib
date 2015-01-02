@@ -1,0 +1,33 @@
+﻿@inherits IQToolkitCodeGen.Template.WcfDataServiceTemplate
+@using IQToolkitCodeGen.Model;
+using System;
+using @this.EntityNamespace;
+
+namespace @this.Namespace {
+    public partial class @this.ClassName @{if(!string.IsNullOrEmpty(this.BaseClass)) { this.Write(" :" + this.BaseClass); } } {
+        private System.Data.Services.Client.DataServiceContext context;
+		@foreach (Table table in this.Tables) {
+            if(table.ShouldInclude() && table.HasPrimaryKey()) {
+        @:
+        @:private System.Data.Services.Client.DataServiceQuery<@table.EntityName> _@{ this.Write(this.Pluralize(table.EntityName)); };
+        @:
+        @:public System.Data.Services.Client.DataServiceQuery<@table.EntityName> @this.Pluralize(table.EntityName) {
+            @:get {
+                @:if ((this._@{ this.Write(this.Pluralize(table.EntityName)); } == null)) {
+                    @:this._@{ this.Write(this.Pluralize(table.EntityName)); } = this.context.CreateQuery<@table.EntityName>("@this.Pluralize(table.EntityName)");
+                @:}
+                @:
+                @:return this._@{ this.Write(this.Pluralize(table.EntityName)); };
+            @:}
+        @:}
+            }
+  }
+
+        public @this.ClassName (Uri serviceRoot) {
+			this.context = new System.Data.Services.Client.DataServiceContext(serviceRoot);
+			this.OnContextCreated();
+        }	
+
+		partial void OnContextCreated();
+    }
+}

@@ -1,0 +1,45 @@
+﻿@inherits IQToolkitCodeGen.Template.DataContextTemplate
+@using IQToolkitCodeGen.Model;
+using System;
+using System.Data.SqlClient;
+using System.IO;
+using IQToolkit.Data;
+using IQToolkit.Data.Common;
+using IQToolkit.Data.Mapping;
+using IQToolkit.Data.SqlClient;
+using IQToolkitContrib;
+
+namespace @this.Namespace {
+    public partial class @this.ClassName : @this.BaseClass {
+        public SqlQueryProvider Provider { get; private set; }
+            
+        public @this.ClassName (string connectionString)
+            : this(CreateRepository(connectionString)) {
+        }
+
+        public @this.ClassName (IRepository repository)
+            : base(repository) {
+            
+            if (repository is DbEntityRepository) {
+                this.Provider = ((DbEntityRepository)repository).Provider as SqlQueryProvider;
+            }
+        }
+
+        private static DbEntityRepository CreateRepository(string connectionString) {
+            SqlQueryProvider provider;
+
+            Type type = typeof(@this.ClassName);
+
+            // path of the xml file in the dll
+            string xmlPath = Path.GetFileNameWithoutExtension(type.FullName) + ".Mapping.xml";
+
+            using (StreamReader streamReader = new StreamReader(type.Assembly.GetManifestResourceStream(xmlPath))) {
+                XmlMapping mapping = XmlMapping.FromXml(streamReader.ReadToEnd());
+                SqlConnection conn = new SqlConnection(connectionString);
+                provider = new SqlQueryProvider(conn, mapping, QueryPolicy.Default);
+            }
+
+            return new DbEntityRepository(provider);
+        }
+    }
+}

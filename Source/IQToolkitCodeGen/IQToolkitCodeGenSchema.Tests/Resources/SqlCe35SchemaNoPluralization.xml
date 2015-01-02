@@ -1,0 +1,92 @@
+<Schema>
+  <Table TableName="Categories" IsView="false" EntityName="Categories">
+    <Column ColumnName="Category ID" PropertyName="Category_ID" PropertyType="System.Int32" PrimaryKey="true" Generated="true" DbType="int NOT NULL" Nullable="false" Precision="10" />
+    <Column ColumnName="Category Name" PropertyName="Category_Name" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(15) NOT NULL" Nullable="false" MaxLength="15" />
+    <Column ColumnName="Description" PropertyName="Description" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="ntext" Nullable="true" MaxLength="536870911" />
+    <Column ColumnName="Picture" PropertyName="Picture" PropertyType="System.Byte[]" PrimaryKey="false" Generated="false" DbType="image" Nullable="true" MaxLength="1073741823" />
+  </Table>
+  <Table TableName="Customers" IsView="false" EntityName="Customers">
+    <Column ColumnName="Customer ID" PropertyName="Customer_ID" PropertyType="System.String" PrimaryKey="true" Generated="false" DbType="nvarchar(5) NOT NULL" Nullable="false" MaxLength="5" />
+    <Column ColumnName="Company Name" PropertyName="Company_Name" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(40) NOT NULL" Nullable="false" MaxLength="40" />
+    <Column ColumnName="Contact Name" PropertyName="Contact_Name" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(30)" Nullable="true" MaxLength="30" />
+    <Column ColumnName="Contact Title" PropertyName="Contact_Title" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(30)" Nullable="true" MaxLength="30" />
+    <Column ColumnName="Address" PropertyName="Address" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(60)" Nullable="true" MaxLength="60" />
+    <Column ColumnName="City" PropertyName="City" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="Region" PropertyName="Region" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="Postal Code" PropertyName="Postal_Code" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(10)" Nullable="true" MaxLength="10" />
+    <Column ColumnName="Country" PropertyName="Country" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="Phone" PropertyName="Phone" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(24)" Nullable="true" MaxLength="24" />
+    <Column ColumnName="Fax" PropertyName="Fax" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(24)" Nullable="true" MaxLength="24" />
+  </Table>
+  <Table TableName="Employees" IsView="false" EntityName="Employees">
+    <Column ColumnName="Employee ID" PropertyName="Employee_ID" PropertyType="System.Int32" PrimaryKey="true" Generated="true" DbType="int NOT NULL" Nullable="false" Precision="10" />
+    <Column ColumnName="Last Name" PropertyName="Last_Name" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(20) NOT NULL" Nullable="false" MaxLength="20" />
+    <Column ColumnName="First Name" PropertyName="First_Name" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(10) NOT NULL" Nullable="false" MaxLength="10" />
+    <Column ColumnName="Title" PropertyName="Title" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(30)" Nullable="true" MaxLength="30" />
+    <Column ColumnName="Birth Date" PropertyName="Birth_Date" PropertyType="System.DateTime" PrimaryKey="false" Generated="false" DbType="datetime" Nullable="true" Precision="23" Scale="3" />
+    <Column ColumnName="Hire Date" PropertyName="Hire_Date" PropertyType="System.DateTime" PrimaryKey="false" Generated="false" DbType="datetime" Nullable="true" Precision="23" Scale="3" />
+    <Column ColumnName="Address" PropertyName="Address" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(60)" Nullable="true" MaxLength="60" />
+    <Column ColumnName="City" PropertyName="City" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="Region" PropertyName="Region" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="Postal Code" PropertyName="Postal_Code" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(10)" Nullable="true" MaxLength="10" />
+    <Column ColumnName="Country" PropertyName="Country" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="Home Phone" PropertyName="Home_Phone" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(24)" Nullable="true" MaxLength="24" />
+    <Column ColumnName="Extension" PropertyName="Extension" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(4)" Nullable="true" MaxLength="4" />
+    <Column ColumnName="Photo" PropertyName="Photo" PropertyType="System.Byte[]" PrimaryKey="false" Generated="false" DbType="image" Nullable="true" MaxLength="1073741823" />
+    <Column ColumnName="Notes" PropertyName="Notes" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="ntext" Nullable="true" MaxLength="536870911" />
+    <Column ColumnName="Reports To" PropertyName="Reports_To" PropertyType="System.Int32" PrimaryKey="false" Generated="false" DbType="int" Nullable="true" Precision="10" />
+  </Table>
+  <Table TableName="Order Details" IsView="false" EntityName="Order_Details">
+    <Column ColumnName="Order ID" PropertyName="Order_ID" PropertyType="System.Int32" PrimaryKey="true" Generated="false" DbType="int NOT NULL" Nullable="false" Precision="10" />
+    <Column ColumnName="Product ID" PropertyName="Product_ID" PropertyType="System.Int32" PrimaryKey="true" Generated="false" DbType="int NOT NULL" Nullable="false" Precision="10" />
+    <Column ColumnName="Unit Price" PropertyName="Unit_Price" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="money NOT NULL" Nullable="false" Precision="19" Scale="4" />
+    <Column ColumnName="Quantity" PropertyName="Quantity" PropertyType="System.Int16" PrimaryKey="false" Generated="false" DbType="smallint NOT NULL" Nullable="false" Precision="5" />
+    <Column ColumnName="Discount" PropertyName="Discount" PropertyType="System.Single" PrimaryKey="false" Generated="false" DbType="real NOT NULL" Nullable="false" Precision="24" />
+  </Table>
+  <Table TableName="Orders" IsView="false" EntityName="Orders">
+    <Column ColumnName="Order ID" PropertyName="Order_ID" PropertyType="System.Int32" PrimaryKey="true" Generated="false" DbType="int NOT NULL" Nullable="false" Precision="10" />
+    <Column ColumnName="Customer ID" PropertyName="Customer_ID" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(5) NOT NULL" Nullable="false" MaxLength="5" />
+    <Column ColumnName="Employee ID" PropertyName="Employee_ID" PropertyType="System.Int32" PrimaryKey="false" Generated="false" DbType="int" Nullable="true" Precision="10" />
+    <Column ColumnName="Ship Name" PropertyName="Ship_Name" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(40)" Nullable="true" MaxLength="40" />
+    <Column ColumnName="Ship Address" PropertyName="Ship_Address" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(60)" Nullable="true" MaxLength="60" />
+    <Column ColumnName="Ship City" PropertyName="Ship_City" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="Ship Region" PropertyName="Ship_Region" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="Ship Postal Code" PropertyName="Ship_Postal_Code" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(10)" Nullable="true" MaxLength="10" />
+    <Column ColumnName="Ship Country" PropertyName="Ship_Country" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="Ship Via" PropertyName="Ship_Via" PropertyType="System.Int32" PrimaryKey="false" Generated="false" DbType="int" Nullable="true" Precision="10" />
+    <Column ColumnName="Order Date" PropertyName="Order_Date" PropertyType="System.DateTime" PrimaryKey="false" Generated="false" DbType="datetime" Nullable="true" Precision="23" Scale="3" />
+    <Column ColumnName="Required Date" PropertyName="Required_Date" PropertyType="System.DateTime" PrimaryKey="false" Generated="false" DbType="datetime" Nullable="true" Precision="23" Scale="3" />
+    <Column ColumnName="Shipped Date" PropertyName="Shipped_Date" PropertyType="System.DateTime" PrimaryKey="false" Generated="false" DbType="datetime" Nullable="true" Precision="23" Scale="3" />
+    <Column ColumnName="Freight" PropertyName="Freight" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="money" Nullable="true" Precision="19" Scale="4" />
+  </Table>
+  <Table TableName="Products" IsView="false" EntityName="Products">
+    <Column ColumnName="Product ID" PropertyName="Product_ID" PropertyType="System.Int32" PrimaryKey="true" Generated="true" DbType="int NOT NULL" Nullable="false" Precision="10" />
+    <Column ColumnName="Supplier ID" PropertyName="Supplier_ID" PropertyType="System.Int32" PrimaryKey="false" Generated="false" DbType="int" Nullable="true" Precision="10" />
+    <Column ColumnName="Category ID" PropertyName="Category_ID" PropertyType="System.Int32" PrimaryKey="false" Generated="false" DbType="int" Nullable="true" Precision="10" />
+    <Column ColumnName="Product Name" PropertyName="Product_Name" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(40) NOT NULL" Nullable="false" MaxLength="40" />
+    <Column ColumnName="English Name" PropertyName="English_Name" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(40)" Nullable="true" MaxLength="40" />
+    <Column ColumnName="Quantity Per Unit" PropertyName="Quantity_Per_Unit" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(20)" Nullable="true" MaxLength="20" />
+    <Column ColumnName="Unit Price" PropertyName="Unit_Price" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="money" Nullable="true" Precision="19" Scale="4" />
+    <Column ColumnName="Units In Stock" PropertyName="Units_In_Stock" PropertyType="System.Int16" PrimaryKey="false" Generated="false" DbType="smallint" Nullable="true" Precision="5" />
+    <Column ColumnName="Units On Order" PropertyName="Units_On_Order" PropertyType="System.Int16" PrimaryKey="false" Generated="false" DbType="smallint" Nullable="true" Precision="5" />
+    <Column ColumnName="Reorder Level" PropertyName="Reorder_Level" PropertyType="System.Int16" PrimaryKey="false" Generated="false" DbType="smallint" Nullable="true" Precision="5" />
+    <Column ColumnName="Discontinued" PropertyName="Discontinued" PropertyType="System.Boolean" PrimaryKey="false" Generated="false" DbType="bit NOT NULL" Nullable="false" Precision="1" Scale="0" />
+  </Table>
+  <Table TableName="Shippers" IsView="false" EntityName="Shippers">
+    <Column ColumnName="Shipper ID" PropertyName="Shipper_ID" PropertyType="System.Int32" PrimaryKey="true" Generated="true" DbType="int NOT NULL" Nullable="false" Precision="10" />
+    <Column ColumnName="Company Name" PropertyName="Company_Name" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(40) NOT NULL" Nullable="false" MaxLength="40" />
+  </Table>
+  <Table TableName="Suppliers" IsView="false" EntityName="Suppliers">
+    <Column ColumnName="Supplier ID" PropertyName="Supplier_ID" PropertyType="System.Int32" PrimaryKey="true" Generated="true" DbType="int NOT NULL" Nullable="false" Precision="10" />
+    <Column ColumnName="Company Name" PropertyName="Company_Name" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(40) NOT NULL" Nullable="false" MaxLength="40" />
+    <Column ColumnName="Contact Name" PropertyName="Contact_Name" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(30)" Nullable="true" MaxLength="30" />
+    <Column ColumnName="Contact Title" PropertyName="Contact_Title" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(30)" Nullable="true" MaxLength="30" />
+    <Column ColumnName="Address" PropertyName="Address" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(60)" Nullable="true" MaxLength="60" />
+    <Column ColumnName="City" PropertyName="City" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="Region" PropertyName="Region" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="Postal Code" PropertyName="Postal_Code" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(10)" Nullable="true" MaxLength="10" />
+    <Column ColumnName="Country" PropertyName="Country" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(15)" Nullable="true" MaxLength="15" />
+    <Column ColumnName="Phone" PropertyName="Phone" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(24)" Nullable="true" MaxLength="24" />
+    <Column ColumnName="Fax" PropertyName="Fax" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="nvarchar(24)" Nullable="true" MaxLength="24" />
+  </Table>
+</Schema>

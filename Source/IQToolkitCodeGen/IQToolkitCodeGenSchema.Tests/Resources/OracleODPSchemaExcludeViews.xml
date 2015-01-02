@@ -1,0 +1,122 @@
+<Schema>
+  <Table TableName="CATEGORIES" IsView="false" EntityName="Category">
+    <Column ColumnName="CATEGORYID" PropertyName="Categoryid" PropertyType="System.Decimal" PrimaryKey="true" Generated="false" DbType="NUMBER (*,0) NOT NULL" Nullable="false" MaxLength="22" Scale="0" />
+    <Column ColumnName="CATEGORYNAME" PropertyName="Categoryname" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(30) NOT NULL" Nullable="false" MaxLength="30" />
+    <Column ColumnName="DESCRIPTION" PropertyName="Description" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NCLOB NOT NULL" Nullable="false" MaxLength="4000" />
+    <Column ColumnName="PICTURE" PropertyName="Picture" PropertyType="System.Byte[]" PrimaryKey="false" Generated="false" DbType="BLOB NOT NULL" Nullable="false" MaxLength="4000" />
+  </Table>
+  <Table TableName="CUSTOMERCUSTOMERDEMO" IsView="false" EntityName="Customercustomerdemo">
+    <Column ColumnName="CUSTOMERID" PropertyName="Customerid" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(10) NOT NULL" Nullable="false" MaxLength="10" />
+    <Column ColumnName="CUSTOMERTYPEID" PropertyName="Customertypeid" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(20) NOT NULL" Nullable="false" MaxLength="20" />
+  </Table>
+  <Table TableName="CUSTOMERDEMOGRAPHICS" IsView="false" EntityName="Customerdemographic">
+    <Column ColumnName="CUSTOMERTYPEID" PropertyName="Customertypeid" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(20) NOT NULL" Nullable="false" MaxLength="20" />
+    <Column ColumnName="CUSTOMERDESC" PropertyName="Customerdesc" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NCLOB NOT NULL" Nullable="false" MaxLength="4000" />
+  </Table>
+  <Table TableName="CUSTOMERS" IsView="false" EntityName="Customer">
+    <Column ColumnName="CUSTOMERID" PropertyName="Customerid" PropertyType="System.String" PrimaryKey="true" Generated="false" DbType="NVARCHAR2(10) NOT NULL" Nullable="false" MaxLength="10" />
+    <Column ColumnName="COMPANYNAME" PropertyName="Companyname" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(80) NOT NULL" Nullable="false" MaxLength="80" />
+    <Column ColumnName="CONTACTNAME" PropertyName="Contactname" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(60) NOT NULL" Nullable="false" MaxLength="60" />
+    <Column ColumnName="CONTACTTITLE" PropertyName="Contacttitle" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(60) NOT NULL" Nullable="false" MaxLength="60" />
+    <Column ColumnName="ADDRESS" PropertyName="Address" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(120) NOT NULL" Nullable="false" MaxLength="120" />
+    <Column ColumnName="CITY" PropertyName="City" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(30) NOT NULL" Nullable="false" MaxLength="30" />
+    <Column ColumnName="REGION" PropertyName="Region" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(30) NOT NULL" Nullable="false" MaxLength="30" />
+    <Column ColumnName="POSTALCODE" PropertyName="Postalcode" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(20) NOT NULL" Nullable="false" MaxLength="20" />
+    <Column ColumnName="COUNTRY" PropertyName="Country" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(30) NOT NULL" Nullable="false" MaxLength="30" />
+    <Column ColumnName="PHONE" PropertyName="Phone" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(48) NOT NULL" Nullable="false" MaxLength="48" />
+    <Column ColumnName="FAX" PropertyName="Fax" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(48) NOT NULL" Nullable="false" MaxLength="48" />
+    <Association AssociationName="FK_CUSTOMERSList" PropertyName="Orders" TableName="CUSTOMERS" ColumnName="CUSTOMERID" RelatedTableName="ORDERS" RelatedColumnName="CUSTOMERID" />
+  </Table>
+  <Table TableName="EMPLOYEES" IsView="false" EntityName="Employee">
+    <Column ColumnName="EMPLOYEEID" PropertyName="Employeeid" PropertyType="System.Decimal" PrimaryKey="true" Generated="false" DbType="NUMBER (*,0) NOT NULL" Nullable="false" MaxLength="22" Scale="0" />
+    <Column ColumnName="LASTNAME" PropertyName="Lastname" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(40) NOT NULL" Nullable="false" MaxLength="40" />
+    <Column ColumnName="FIRSTNAME" PropertyName="Firstname" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(20) NOT NULL" Nullable="false" MaxLength="20" />
+    <Column ColumnName="TITLE" PropertyName="Title" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(60) NOT NULL" Nullable="false" MaxLength="60" />
+    <Column ColumnName="TITLEOFCOURTESY" PropertyName="Titleofcourtesy" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(50) NOT NULL" Nullable="false" MaxLength="50" />
+    <Column ColumnName="BIRTHDATE" PropertyName="Birthdate" PropertyType="System.DateTime" PrimaryKey="false" Generated="false" DbType="DATE NOT NULL" Nullable="false" MaxLength="7" />
+    <Column ColumnName="HIREDATE" PropertyName="Hiredate" PropertyType="System.DateTime" PrimaryKey="false" Generated="false" DbType="DATE NOT NULL" Nullable="false" MaxLength="7" />
+    <Column ColumnName="ADDRESS" PropertyName="Address" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(120) NOT NULL" Nullable="false" MaxLength="120" />
+    <Column ColumnName="CITY" PropertyName="City" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(30) NOT NULL" Nullable="false" MaxLength="30" />
+    <Column ColumnName="REGION" PropertyName="Region" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(30) NOT NULL" Nullable="false" MaxLength="30" />
+    <Column ColumnName="POSTALCODE" PropertyName="Postalcode" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(20) NOT NULL" Nullable="false" MaxLength="20" />
+    <Column ColumnName="COUNTRY" PropertyName="Country" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(30) NOT NULL" Nullable="false" MaxLength="30" />
+    <Column ColumnName="HOMEPHONE" PropertyName="Homephone" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(48) NOT NULL" Nullable="false" MaxLength="48" />
+    <Column ColumnName="EXTENSION" PropertyName="Extension" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(8) NOT NULL" Nullable="false" MaxLength="8" />
+    <Column ColumnName="PHOTO" PropertyName="Photo" PropertyType="System.Byte[]" PrimaryKey="false" Generated="false" DbType="BLOB NOT NULL" Nullable="false" MaxLength="4000" />
+    <Column ColumnName="NOTES" PropertyName="Notes" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NCLOB NOT NULL" Nullable="false" MaxLength="4000" />
+    <Column ColumnName="REPORTSTO" PropertyName="Reportsto" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="NUMBER (*,0) NOT NULL" Nullable="false" MaxLength="22" Scale="0" />
+    <Column ColumnName="PHOTOPATH" PropertyName="Photopath" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(510) NOT NULL" Nullable="false" MaxLength="510" />
+  </Table>
+  <Table TableName="EMPLOYEETERRITORIES" IsView="false" EntityName="Employeeterritory">
+    <Column ColumnName="EMPLOYEEID" PropertyName="Employeeid" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="NUMBER (*,0) NOT NULL" Nullable="false" MaxLength="22" Scale="0" />
+    <Column ColumnName="TERRITORYID" PropertyName="Territoryid" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(40) NOT NULL" Nullable="false" MaxLength="40" />
+  </Table>
+  <Table TableName="ORDER DETAILS" IsView="false" EntityName="Order_Detail">
+    <Column ColumnName="ORDERID" PropertyName="Orderid" PropertyType="System.Decimal" PrimaryKey="true" Generated="false" DbType="NUMBER (*,0) NOT NULL" Nullable="false" MaxLength="22" Scale="0" />
+    <Column ColumnName="PRODUCTID" PropertyName="Productid" PropertyType="System.Decimal" PrimaryKey="true" Generated="false" DbType="NUMBER (*,0) NOT NULL" Nullable="false" MaxLength="22" Scale="0" />
+    <Column ColumnName="UNITPRICE" PropertyName="Unitprice" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="NUMBER (19,4) NOT NULL" Nullable="false" MaxLength="22" Precision="19" Scale="4" />
+    <Column ColumnName="QUANTITY" PropertyName="Quantity" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="NUMBER (*,0) NOT NULL" Nullable="false" MaxLength="22" Scale="0" />
+    <Column ColumnName="DISCOUNT" PropertyName="Discount" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="FLOAT(126) NOT NULL" Nullable="false" MaxLength="22" Precision="126" />
+    <Association AssociationName="FK_ORDERS" PropertyName="Orders" TableName="ORDER DETAILS" ColumnName="ORDERID" RelatedTableName="ORDERS" RelatedColumnName="ORDERID" />
+    <Association AssociationName="FK_PRODUCTS" PropertyName="Products" TableName="ORDER DETAILS" ColumnName="PRODUCTID" RelatedTableName="PRODUCTS" RelatedColumnName="PRODUCTID" />
+  </Table>
+  <Table TableName="ORDERS" IsView="false" EntityName="Order">
+    <Column ColumnName="ORDERID" PropertyName="Orderid" PropertyType="System.Decimal" PrimaryKey="true" Generated="false" DbType="NUMBER (*,0) NOT NULL" Nullable="false" MaxLength="22" Scale="0" />
+    <Column ColumnName="CUSTOMERID" PropertyName="Customerid" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(10) NOT NULL" Nullable="false" MaxLength="10" />
+    <Column ColumnName="EMPLOYEEID" PropertyName="Employeeid" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="NUMBER (*,0) NOT NULL" Nullable="false" MaxLength="22" Scale="0" />
+    <Column ColumnName="ORDERDATE" PropertyName="Orderdate" PropertyType="System.DateTime" PrimaryKey="false" Generated="false" DbType="TIMESTAMP(11) NOT NULL" Nullable="false" MaxLength="11" Scale="7" />
+    <Column ColumnName="REQUIREDDATE" PropertyName="Requireddate" PropertyType="System.DateTime" PrimaryKey="false" Generated="false" DbType="DATE NOT NULL" Nullable="false" MaxLength="7" />
+    <Column ColumnName="SHIPPEDDATE" PropertyName="Shippeddate" PropertyType="System.DateTime" PrimaryKey="false" Generated="false" DbType="DATE NOT NULL" Nullable="false" MaxLength="7" />
+    <Column ColumnName="SHIPVIA" PropertyName="Shipvia" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="NUMBER (*,0) NOT NULL" Nullable="false" MaxLength="22" Scale="0" />
+    <Column ColumnName="FREIGHT" PropertyName="Freight" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="NUMBER (19,4) NOT NULL" Nullable="false" MaxLength="22" Precision="19" Scale="4" />
+    <Column ColumnName="SHIPNAME" PropertyName="Shipname" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(80) NOT NULL" Nullable="false" MaxLength="80" />
+    <Column ColumnName="SHIPADDRESS" PropertyName="Shipaddress" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(120) NOT NULL" Nullable="false" MaxLength="120" />
+    <Column ColumnName="SHIPCITY" PropertyName="Shipcity" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(30) NOT NULL" Nullable="false" MaxLength="30" />
+    <Column ColumnName="SHIPREGION" PropertyName="Shipregion" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(30) NOT NULL" Nullable="false" MaxLength="30" />
+    <Column ColumnName="SHIPPOSTALCODE" PropertyName="Shippostalcode" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(20) NOT NULL" Nullable="false" MaxLength="20" />
+    <Column ColumnName="SHIPCOUNTRY" PropertyName="Shipcountry" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(30) NOT NULL" Nullable="false" MaxLength="30" />
+    <Association AssociationName="FK_CUSTOMERS" PropertyName="Customers" TableName="ORDERS" ColumnName="CUSTOMERID" RelatedTableName="CUSTOMERS" RelatedColumnName="CUSTOMERID" />
+    <Association AssociationName="FK_ORDERSList" PropertyName="Order_Details" TableName="ORDERS" ColumnName="ORDERID" RelatedTableName="ORDER DETAILS" RelatedColumnName="ORDERID" />
+  </Table>
+  <Table TableName="PRODUCTS" IsView="false" EntityName="Product">
+    <Column ColumnName="PRODUCTID" PropertyName="Productid" PropertyType="System.Decimal" PrimaryKey="true" Generated="false" DbType="NUMBER (*,0) NOT NULL" Nullable="false" MaxLength="22" Scale="0" />
+    <Column ColumnName="PRODUCTNAME" PropertyName="Productname" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(80) NOT NULL" Nullable="false" MaxLength="80" />
+    <Column ColumnName="SUPPLIERID" PropertyName="Supplierid" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="NUMBER (*,0) NOT NULL" Nullable="false" MaxLength="22" Scale="0" />
+    <Column ColumnName="CATEGORYID" PropertyName="Categoryid" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="NUMBER (*,0) NOT NULL" Nullable="false" MaxLength="22" Scale="0" />
+    <Column ColumnName="QUANTITYPERUNIT" PropertyName="Quantityperunit" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(40) NOT NULL" Nullable="false" MaxLength="40" />
+    <Column ColumnName="UNITPRICE" PropertyName="Unitprice" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="NUMBER (19,4) NOT NULL" Nullable="false" MaxLength="22" Precision="19" Scale="4" />
+    <Column ColumnName="UNITSINSTOCK" PropertyName="Unitsinstock" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="NUMBER (*,0) NOT NULL" Nullable="false" MaxLength="22" Scale="0" />
+    <Column ColumnName="UNITSONORDER" PropertyName="Unitsonorder" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="NUMBER (*,0) NOT NULL" Nullable="false" MaxLength="22" Scale="0" />
+    <Column ColumnName="REORDERLEVEL" PropertyName="Reorderlevel" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="NUMBER (*,0) NOT NULL" Nullable="false" MaxLength="22" Scale="0" />
+    <Column ColumnName="DISCONTINUED" PropertyName="Discontinued" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="NUMBER (1,0) NOT NULL" Nullable="false" MaxLength="22" Precision="1" Scale="0" />
+    <Association AssociationName="FK_PRODUCTSList" PropertyName="Order_Details" TableName="PRODUCTS" ColumnName="PRODUCTID" RelatedTableName="ORDER DETAILS" RelatedColumnName="PRODUCTID" />
+  </Table>
+  <Table TableName="REGION" IsView="false" EntityName="Region">
+    <Column ColumnName="REGIONID" PropertyName="Regionid" PropertyType="System.Decimal" PrimaryKey="true" Generated="false" DbType="NUMBER (*,0) NOT NULL" Nullable="false" MaxLength="22" Scale="0" />
+    <Column ColumnName="REGIONDESCRIPTION" PropertyName="Regiondescription" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NCHAR(100) NOT NULL" Nullable="false" MaxLength="100" />
+  </Table>
+  <Table TableName="SHIPPERS" IsView="false" EntityName="Shipper">
+    <Column ColumnName="SHIPPERID" PropertyName="Shipperid" PropertyType="System.Decimal" PrimaryKey="true" Generated="false" DbType="NUMBER (*,0) NOT NULL" Nullable="false" MaxLength="22" Scale="0" />
+    <Column ColumnName="COMPANYNAME" PropertyName="Companyname" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(80) NOT NULL" Nullable="false" MaxLength="80" />
+    <Column ColumnName="PHONE" PropertyName="Phone" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(48) NOT NULL" Nullable="false" MaxLength="48" />
+  </Table>
+  <Table TableName="SUPPLIERS" IsView="false" EntityName="Supplier">
+    <Column ColumnName="SUPPLIERID" PropertyName="Supplierid" PropertyType="System.Decimal" PrimaryKey="true" Generated="false" DbType="NUMBER (*,0) NOT NULL" Nullable="false" MaxLength="22" Scale="0" />
+    <Column ColumnName="COMPANYNAME" PropertyName="Companyname" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(80) NOT NULL" Nullable="false" MaxLength="80" />
+    <Column ColumnName="CONTACTNAME" PropertyName="Contactname" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(60) NOT NULL" Nullable="false" MaxLength="60" />
+    <Column ColumnName="CONTACTTITLE" PropertyName="Contacttitle" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(60) NOT NULL" Nullable="false" MaxLength="60" />
+    <Column ColumnName="ADDRESS" PropertyName="Address" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(120) NOT NULL" Nullable="false" MaxLength="120" />
+    <Column ColumnName="CITY" PropertyName="City" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(30) NOT NULL" Nullable="false" MaxLength="30" />
+    <Column ColumnName="REGION" PropertyName="Region" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(30) NOT NULL" Nullable="false" MaxLength="30" />
+    <Column ColumnName="POSTALCODE" PropertyName="Postalcode" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(20) NOT NULL" Nullable="false" MaxLength="20" />
+    <Column ColumnName="COUNTRY" PropertyName="Country" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(30) NOT NULL" Nullable="false" MaxLength="30" />
+    <Column ColumnName="PHONE" PropertyName="Phone" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(48) NOT NULL" Nullable="false" MaxLength="48" />
+    <Column ColumnName="FAX" PropertyName="Fax" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(48) NOT NULL" Nullable="false" MaxLength="48" />
+    <Column ColumnName="HOMEPAGE" PropertyName="Homepage" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NCLOB NOT NULL" Nullable="false" MaxLength="4000" />
+  </Table>
+  <Table TableName="TERRITORIES" IsView="false" EntityName="Territory">
+    <Column ColumnName="TERRITORYID" PropertyName="Territoryid" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="NUMBER (*,0) NOT NULL" Nullable="false" MaxLength="22" Scale="0" />
+    <Column ColumnName="TERRITORYDESCRIPTION" PropertyName="Territorydescription" PropertyType="System.String" PrimaryKey="false" Generated="false" DbType="NVARCHAR2(100) NOT NULL" Nullable="false" MaxLength="100" />
+    <Column ColumnName="REGIONID" PropertyName="Regionid" PropertyType="System.Decimal" PrimaryKey="false" Generated="false" DbType="NUMBER (*,0) NOT NULL" Nullable="false" MaxLength="22" Scale="0" />
+  </Table>
+</Schema>
