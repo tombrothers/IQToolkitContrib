@@ -3,9 +3,6 @@ IQToolkitContrib
 
 IQToolkit Contrib is a project for providing classes to work with the IQToolkit providers.
 
-[Download current release](https://iqtoolkitcontrib.codeplex.com/downloads/get/353378).
-
-
 
 [IQToolkit Code Generator](http://www.randomdevnotes.com/2010/01/iqtoolkitcodegen-alpha-version/)
 
