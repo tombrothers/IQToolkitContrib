@@ -3,7 +3,7 @@ IQToolkitContrib
 
 IQToolkit Contrib is a project for providing classes to work with the IQToolkit providers.
 
-[Download current release](https://onedrive.live.com/embed?cid=D340A0579FE439B2&resid=D340A0579FE439B2%214210&authkey=AHNIORTJ-_9CZvU).
+[Download current release](https://iqtoolkitcontrib.codeplex.com/downloads/get/353378).
 
 
 
